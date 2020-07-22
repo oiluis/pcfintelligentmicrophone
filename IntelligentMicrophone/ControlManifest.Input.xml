@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest>
+  <control namespace="Eax" constructor="IntelligentMicrophone" version="0.0.8" display-name-key="IntelligentMicrophone" description-key="IntelligentMicrophone description" control-type="standard">
+    <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
+    <property name="Text" display-name-key="Text" description-key="The output parsed text" of-type="SingleLine.Text" usage="bound" required="true" />
+    <property name="TopIntent" display-name-key="Text" description-key="The output top intent from LUIS" of-type="SingleLine.Text" usage="bound" />
+    <property name="IconFill" display-name-key="Icon Fill" description-key="The icon fill color as hex" of-type="SingleLine.Text" usage="input" />
+    <property name="IconHoverFill" display-name-key="Icon Hover Fill" description-key="The icon hover fill color as hex" of-type="SingleLine.Text" usage="input" />
+    <property name="IconDisabledFill" display-name-key="Icon Disabled Fill" description-key="The icon disabled fill color as hex" of-type="SingleLine.Text" usage="input" />
+    <property name="IconPressedFill" display-name-key="Icon Pressed Fill" description-key="The icon disabled fill color as hex" of-type="SingleLine.Text" usage="input" />
+    <property name="BackgroundFill" display-name-key="Background Icon Fill" description-key="The background fill color as hex" of-type="SingleLine.Text" usage="input" />
+    <property name="BackgroundHoverFill" display-name-key="Background Hover Fill" description-key="The hover background fill color as hex" of-type="SingleLine.Text" usage="input" />
+    <property name="BackgroundDisabledFill" display-name-key="Background Disabled Fill" description-key="The disabled background fill color as hex" of-type="SingleLine.Text" usage="input" />
+    <property name="BackgroundPressedFill" display-name-key="Background Pressed Fill" description-key="The pressed background fill color as hex" of-type="SingleLine.Text" usage="input" />
+    <property name="BorderRadius" display-name-key="Border Radius" description-key="The border radius as pixels" of-type="Whole.None" usage="input" />
+    <property name="BorderFill" display-name-key="Border Icon Fill" description-key="The Border fill color as hex" of-type="SingleLine.Text" usage="input" />
+    <property name="BorderHoverFill" display-name-key="Border Hover Fill" description-key="The hover Border fill color as hex" of-type="SingleLine.Text" usage="input" />
+    <property name="BorderDisabledFill" display-name-key="Border Disabled Fill" description-key="The disabled Border fill color as hex" of-type="SingleLine.Text" usage="input" />
+    <property name="BorderPressedFill" display-name-key="Border Pressed Fill" description-key="The pressed Border fill color as hex" of-type="SingleLine.Text" usage="input" />
+    <property name="LUISSubscriptionKey" display-name-key="LUIS Subscription Key" description-key="The output parsed text" of-type="SingleLine.Text" usage="input" />
+    <property name="SpeechtoTextSubscriptionKey" display-name-key="Speech to Text Subscription Key" description-key="The output parsed text" of-type="SingleLine.Text" usage="input" />
+    <property name="EnableRealTimeTranscription" display-name-key="Enable Real Time Transcription" description-key="Defines if the real time transcription is enabled or not" of-type="TwoOptions" usage="input" />
+    <!-- 
+      Property node's of-type attribute can be of-type-group attribute. 
+      Example:
+      <type-group name="numbers">
+        <type>Whole.None</type>
+        <type>Currency</type>
+        <type>FP</type>
+        <type>Decimal</type>
+      </type-group>
+      <property name="sampleProperty" display-name-key="Property_Display_Key" description-key="Property_Desc_Key" of-type-group="numbers" usage="bound" required="true" />
+    -->
+    <resources>
+      <code path="index.ts" order="1" />
+      <!-- UNCOMMENT TO ADD MORE RESOURCES
+      <css path="css/IntelligentMicrophone.css" order="1" />
+      <resx path="strings/IntelligentMicrophone.1033.resx" version="1.0.0" />
+      -->
+    </resources>
+    <feature-usage>
+      <uses-feature name="Device.captureAudio" required="true" />
+    </feature-usage>
+    <!-- UNCOMMENT TO ENABLE THE SPECIFIED API
+    <feature-usage>
+      <uses-feature name="Device.captureAudio" required="true" />
+      <uses-feature name="Device.captureImage" required="true" />
+      <uses-feature name="Device.captureVideo" required="true" />
+      <uses-feature name="Device.getBarcodeValue" required="true" />
+      <uses-feature name="Device.getCurrentPosition" required="true" />
+      <uses-feature name="Device.pickFile" required="true" />
+      <uses-feature name="Utility" required="true" />
+      <uses-feature name="WebAPI" required="true" />
+    </feature-usage>
+    -->
+  </control>
+</manifest>
